@@ -1,11 +1,11 @@
 import numpy as np
-from numpy.core.defchararray import array
+import matplotlib.pylab as plt
 
 def step_function(x):
-    y = x > 0
-    return y.astype(np.int)
+    return np.array(x > 0, dtype=np.int)
 
-x = np.array([-1, 1, -2, 3, 4])
+x = np.arange(-5.0, 5.0, 0.1)
 y = step_function(x)
-print(x)
-print(y)
+plt.plot(x, y)
+plt.ylim(-0.1, 1.1)     # limitation on a value range regarding 
+plt.savefig("stepFun.png")
